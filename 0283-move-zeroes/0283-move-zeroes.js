@@ -1,10 +1,9 @@
-const moveZeroes = function(nums) {
-  let j =0;
-  for(let i=0; i < nums.length; i++){
-   if(nums[i] === 0){
-      j++ ;
-   } else { 
-     [nums[i - j], nums[i]] = [nums[i], nums[i - j]];
-   }
+var moveZeroes = function(nums) {
+  for (let i = nums.length; i >= 0; i--) {
+    if (nums[i] === 0) {
+      nums.splice(i, 1);
+      nums.push(0);
+    }
   }
+  return nums;
 };
